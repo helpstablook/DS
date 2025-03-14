@@ -9,22 +9,20 @@
 }
 .topics .topic .left,
 .topics .topic .right{
-    flex:1;
+    flex: 1;
 }
 .topics .topic .left img{
     max-width: 100%;
 }
-.topic li{
+.topics li{
     font-family: "Grandstander", sans-serif;
     font-weight: bold;
-    letter-spacing: -0,1rem;
+    letter-spacing: -0.1rem;
     font-size: 5rem;
     line-height: 5rem;
 }
-
 /*Altera a cor entre os elementos da lista
 .topic li:nth-child(even)*/
-
 .topic li:nth-child(even),
 .topic li span{
     color: var(--secondary);
@@ -39,7 +37,7 @@
     .topics .topic{
         flex-direction: row;
     }
-    .topics .topic .reverse{
+    .topics .topic.reverse{
         flex-direction: row-reverse;
     }
     .topic li{
