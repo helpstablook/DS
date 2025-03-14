@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios com Estrutura de Repetição</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: rebeccapurple;
+        }
+        button {
+            margin: 5px 0;
+            padding: 10px 20px;
+            background-color: rebeccapurple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: purple;
+        }
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu de Exercícios</h1>
+    <p>Escolha um exercício para executar:</p>
+    <button onclick="exercicio1()">1 - Exibir 20 vezes a mensagem</button>
+    <button onclick="exercicio2()">2 - Soma das idades de 20 pessoas</button>
+    <button onclick="exercicio3()">3 - Tabuada de um número</button>
+    <button onclick="exercicio4()">4 - Quantos números maiores que 8</button>
+    <button onclick="exercicio5()">5 - Média das idades de 20 pessoas</button>
+    <div id="resultado"></div>
+
+    <script>
+        
+        function exibirResultado(mensagem) {
+            document.getElementById("resultado").innerHTML = `<strong>Resultado:</strong> <br> ${mensagem}`;
+        }
+
+        // Exercício 1
+        function exercicio1() {
+            let mensagem = "Eu gosto de estudar Javascript!";
+            let resultado = "";
+            for (let i = 0; i < 20; i++) {
+                resultado += mensagem + "<br>";
+            }
+            exibirResultado(resultado);
+        }
+
+        // Exercício 2
+        function exercicio2() {
+            let somaIdades = 0;
+            for (let i = 0; i < 20; i++) {
+                let idade = parseInt(prompt(`Digite a idade da pessoa ${i + 1}:`));
+                somaIdades += idade;
+            }
+            exibirResultado(`A soma das idades é: ${somaIdades}`);
+        }
+
+        // Exercício 3
+        function exercicio3() {
+            let numero = parseInt(prompt("Digite um número para ver sua tabuada:"));
+            let resultado = "";
+            for (let i = 1; i <= 10; i++) {
+                resultado += `${numero} x ${i} = ${numero * i}<br>`;
+            }
+            exibirResultado(resultado);
+        }
+
+        // Exercício 4
+        function exercicio4() {
+            let contador = 0;
+            for (let i = 0; i < 20; i++) {
+                let numero = parseInt(prompt(`Digite o número ${i + 1}:`));
+                if (numero > 8) {
+                    contador++;
+                }
+            }
+            exibirResultado(`Foram informados ${contador} números maiores que 8.`);
+        }
+
+        // Exercício 5
+        function exercicio5() {
+            let soma = 0;
+            for (let i = 0; i < 20; i++) {
+                let idade = parseInt(prompt(`Digite a idade da pessoa ${i + 1}:`));
+                soma += idade;
+            }
+            let media = soma / 20;
+            exibirResultado(`A média das idades é: ${media}`);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Filmes</title>
+    <link rel="stylesheet" href="exercicio09.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <h1>Locadora</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <input type="text" id="search" placeholder="Pesquisar filmes...">
+                </div>
+            </div>
+</header>
+    <form id="movieForm">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="director">Diretor:</label>
+        <input type="text" id="director" name="director" required>
+        <label for="genre">Gênero:</label>
+        <select id="genre" name="genre" required>
+            <option value="terror">Terror</option>
+            <option value="drama">Drama</option>
+            <option value="acao">Ação</option>
+        </select>
+        <label for="posterUpload">Capa do Filme:</label>
+        <input type="file" id="posterUpload" name="posterUpload" accept="image/*" required>
+        <button type="submit">Cadastrar Filme</button>
+    </form>
+
+        <h2>Filmes Cadastrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Capa</th>
+                    <th>Título</th>
+                    <th>Diretor</th>
+                    <th>Gênero</th>
+                </tr>
+            </thead>
+            <tbody id="movieTableBody">
+                <tr>
+                    <td><img src="https://media.fstatic.com/Z-JDXqxWJ5k4fsE6FP_m9c8u3rM=/322x478/smart/filters:format(webp)/media/movies/covers/2018/04/O_Animal_Cordial.jpg" alt="O Animal Cordial"></td>
+                    <td>O Animal Cordial</td>
+                    <td>Gabriela Amaral Almeida</td>
+                    <td>Terror</td>
+                </tr>
+                <tr>
+                    <td><img src="https://http2.mlstatic.com/D_NQ_NP_776202-MLA76294148179_052024-OO.jpg" alt="O Resgate do Soldado Ryan"></td>
+                    <td>O Resgate do Soldado Ryan</td>
+                    <td>Steven Spielberg</td>
+                    <td>Drama</td>
+                </tr>
+                <tr>
+                    <td><img src="https://play-lh.googleusercontent.com/NZVX-GzNvaGUocLGSQNUtDB-H084hgOQpRIYmg_sTEYV2BQzgH0Iqm9jCJe47u3nSqA" alt="Mad Max: Estrada da Fúria"></td>
+                    <td>Mad Max: Estrada da Fúria</td>
+                    <td>George Miller</td>
+                    <td>Ação</td>
+                </tr>
+                <tr>
+                    <td><img src="https://veja.abril.com.br/wp-content/uploads/2020/02/poster-filme-parasite.jpg?quality=70&strip=info&w=720&crop=1" alt="Parasita"></td>
+                    <td>Parasita</td>
+                    <td>Bong Joon Ho</td>
+                    <td>Drama</td>
+                </tr>
+                <tr>
+                    <td><img src="https://br.web.img3.acsta.net/medias/nmedia/18/95/07/64/20377036.jpg" alt="Violência Gratuita"></td>
+                    <td>Violência Gratuita</td>
+                    <td>Michael Haneke</td>
+                    <td>Terror</td>
+                </tr>
+                <tr>
+                    <td><img src="https://br.web.img3.acsta.net/medias/nmedia/18/86/98/32/19870786.jpg" alt="Batman: O Cavaleiro das Trevas"></td>
+                    <td>Batman: O Cavaleiro das Trevas</td>
+                    <td>Christopher Nolan</td>
+                    <td>Ação</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/pt/c/c0/La_La_Land_%28filme%29.png" alt="La La Land"></td>
+                    <td>La La Land</td>
+                    <td>Damien Chazelle</td>
+                    <td>Drama</td>
+                </tr>
+                <tr>
+                    <td><img src="https://cdn.fstatic.com/media/movies/covers/2022/06/FV8getxXoAIk6Rv.jpg" alt="Noites Brutais"></td>
+                    <td>Noites Brutais</td>
+                    <td>Zach Cregger</td>
+                    <td>Terror</td>
+                </tr>
+                <tr>
+                    <td><img src="https://i0.wp.com/jamesbondbrasil.com/wp-content/uploads/2012/10/jbbr_dc_cr_poster.jpg?resize=652%2C970" alt="007 - Cassino Royale"></td>
+                    <td>007 - Cassino Royale</td>
+                    <td>Martin Campbell</td>
+                    <td>Ação</td>
+                </tr>
+                <tr>
+                    <td><img src="https://play-lh.googleusercontent.com/ZuxZToaCI5OCe428pr8htHI4TRAlBBFfs1uNp0I5PmG3rEQsrTrOOBziTONpSwwBFxeyhyywMGp7TiuzvZw" alt="Central do Brasil"></td>
+                    <td>Central do Brasil</td>
+                    <td>Walter Salles</td>
+                    <td>Drama</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        const movieTableBody = document.getElementById('movieTableBody');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const rows = movieTableBody.getElementsByTagName('tr');
+
+            Array.from(rows).forEach(row => {
+                const title = row.cells[1].textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

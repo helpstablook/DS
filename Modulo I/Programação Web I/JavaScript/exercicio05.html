@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercícios de Verificação</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        section { margin-bottom: 20px; }
+        label, button { display: block; margin: 5px 0; }
+        input { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Exercício 01 -->
+    <section>
+        <h2>Informe o Mês (1-12):</h2>
+        <input type="number" id="mes" min="1" max="12">
+        <button onclick="verificarMes()">Verificar</button>
+        <p id="resultadoMes"></p>
+    </section>
+
+    <!-- Exercício 02 -->
+    <section>
+        <h2>Informe um Número Inteiro:</h2>
+        <input type="number" id="numero">
+        <button onclick="verificarNumero()">Verificar</button>
+        <p id="resultadoNumero"></p>
+    </section>
+
+    <!-- Exercício 03 -->
+    <section>
+        <h2>Informe Três Valores:</h2>
+        <input type="number" id="valor1" step="0.01" placeholder="Valor 1">
+        <input type="number" id="valor2" step="0.01" placeholder="Valor 2">
+        <input type="number" id="valor3" step="0.01" placeholder="Valor 3">
+        <button onclick="verificarSoma()">Verificar Soma</button>
+        <p id="resultadoSoma"></p>
+    </section>
+
+    <!-- Exercício 04 -->
+    <section>
+        <h2>Informe uma Letra (F ou M):</h2>
+        <input type="text" id="letra" maxlength="1">
+        <button onclick="verificarGenero()">Verificar</button>
+        <p id="resultadoGenero"></p>
+    </section>
+
+<script>
+    function verificarMes() {
+        const mes = parseInt(document.getElementById("mes").value);
+        const meses = [
+        "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
+        "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
+        ];
+
+        if (mes >= 1 && mes <= 12) {
+            document.getElementById("resultadoMes").innerText = "Mês: " + meses[mes - 1];
+            } else {
+            document.getElementById("resultadoMes").innerText = "Mês Inválido";
+            }
+        }
+
+    function verificarNumero() {
+        const numero = parseInt(document.getElementById("numero").value);
+        if (numero < 0) {
+            document.getElementById("resultadoNumero").innerText = "Erro: número negativo";
+            } else {
+            document.getElementById("resultadoNumero").innerText = "Número positivo ou zero";
+            }
+        }
+
+    function verificarSoma() {
+        const valor1 = parseFloat(document.getElementById("valor1").value);
+        const valor2 = parseFloat(document.getElementById("valor2").value);
+        const valor3 = parseFloat(document.getElementById("valor3").value);
+        const soma = valor1 + valor2 + valor3;
+
+        if (soma > 80) {
+            document.getElementById("resultadoSoma").innerText = "Soma: " + soma;
+            } else {
+            document.getElementById("resultadoSoma").innerText = "Valor da soma inválido";
+            }
+        }
+
+    function verificarGenero() {
+        const letra = document.getElementById("letra").value.toUpperCase();
+
+        if (letra === "F") {
+            document.getElementById("resultadoGenero").innerText = "Feminino";
+            } else if (letra === "M") {
+            document.getElementById("resultadoGenero").innerText = "Masculino";
+            } else {
+            document.getElementById("resultadoGenero").innerText = "Letra inválida";
+            }
+        }
+</script>
+
+</body>
+</html>

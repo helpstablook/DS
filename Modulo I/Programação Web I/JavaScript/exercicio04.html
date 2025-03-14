@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+//Exercício 01
+    <script>
+        //parseInt - Inteiros
+        //parseFloat - Reais
+        //Number - Indiferente
+        let numero = Number(prompt("Digite um número: "));
+        let anterior = numero -1;
+        let posterior = numero +1;
+        alert("Número vizinhos: "+anterior.toFixed(2)+ " e " +posterior.toFixed(2));      
+    </script>
+//Exercício 02
+    <script>
+        let conta = parseFloat(prompt("Digite o valor total da conta: "));
+        let clientes = parseFloat (prompt("Digite o número de clientes: "));
+        let valor = conta / clientes;
+        alert("Valor por cliente R$: "+valor.toFixed(2));
+    </script>
+//Exercício 03
+    <script>
+        let preco = parseFloat(prompt("Digite o preço do produto: "));
+        let avista = preco - (preco*0.10);
+        let parcelado = preco/3;
+        alert ("Preço R$: "+preco.toFixed(2)+
+        "\n À vista R$: "+avista.toFixed(2)+
+        "\n Ou 3x de R$: "+parcelado.toFixed(2));
+    </script>

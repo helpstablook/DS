@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Estrutura condicional Switch</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        section { margin-bottom: 20px; }
+        label, button { display: block; margin: 5px 0; }
+        input { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+<!-- Exercício 01 -->
+<section>
+    <h2>Exercício 01 - Classificação de Produtos</h2>
+    <label for="codigoProduto">Digite o código do produto:</label>
+    <input type="number" id="codigoProduto" min="1">
+    <button onclick="mostrarClassificacao()">Verificar Classificação</button>
+    <p id="resultado01"></p>
+</section>
+
+<!-- Exercício 02 -->
+<section>
+    <h2>Exercício 02 - Número de Dias do Mês</h2>
+    <label for="mes">Digite o número do mês:</label>
+    <input type="number" id="mes" min="1" max="12">
+    <button onclick="mostrarDias()">Verificar Dias</button>
+    <p id="resultado02"></p>
+</section>
+
+<!-- Exercício 03 -->
+<section>
+    <h2>Exercício 03 - Cálculo de Compra</h2>
+    <label for="codigoCompra">Digite o código do produto:</label>
+    <input type="number" id="codigoCompra" min="1">
+    <label for="quantidade">Digite a quantidade:</label>
+    <input type="number" id="quantidade" min="1">
+    <button onclick="mostrarCompra()">Calcular Total</button>
+    <p id="resultado03"></p>
+</section>
+
+<!-- Exercício 04 -->
+<section>
+    <h2>Exercício 04 - Cálculo de Combustível</h2>
+    <label for="tipoCombustivel">Digite o tipo de combustível (G para gasolina, E para etanol):</label>
+    <input type="text" id="tipoCombustivel">
+    <label for="litros">Digite a quantidade de litros:</label>
+    <input type="number" id="litros" min="1">
+    <button onclick="mostrarCombustivel()">Calcular Total</button>
+    <p id="resultado04"></p>
+</section>
+
+<!-- Exercício 05-->
+<section>
+    <h2>Exercício 05 - Mês Correspondente</h2>
+    <label for="numeroMes">Digite um número de 1 a 12:</label>
+    <input type="number" id="numeroMes" min="1" max="12">
+    <button onclick="mostrarMes()">Mostrar Mês</button>
+    <p id="resultado05"></p>
+</section>
+
+<!--Exercício 01-->
+<script>
+function classificarProduto(codigo) {
+    switch (codigo) {
+        case 1:
+            return "Alimento não perecível";
+        case 2:
+            return "Alimento perecível";
+        case 3:
+            return "Vestuário";
+        case 4:
+            return "Limpeza";
+        default:
+            return "Código inválido";
+    }
+}
+
+function mostrarClassificacao() {
+    const codigo = parseInt(document.getElementById("codigoProduto").value);
+    document.getElementById("resultado01").textContent = classificarProduto(codigo);
+}
+</script>
+
+<!-- Exercício 02 -->
+<script>
+function numeroDeDias(mes) {
+    switch (mes) {
+        case 2:
+            return "28 dias";
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+            return "30 dias";
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+            return "31 dias";
+        default:
+            return "Mês inválido";
+    }
+}
+
+function mostrarDias() {
+    const mes = parseInt(document.getElementById("mes").value);
+    document.getElementById("resultado02").textContent = numeroDeDias(mes);
+}
+</script>
+
+<!-- Exercício 03 -->
+<script>
+function calcularCompra(codigo, quantidade) {
+    let preco;
+    switch (codigo) {
+        case 1:
+            preco = 0.20;
+            break;
+        case 2:
+            preco = 3.00;
+            break;
+        case 3:
+            preco = 3.50;
+            break;
+        case 4:
+            preco = 5.50;
+            break;
+        case 5:
+            preco = 6.00;
+            break;
+        default:
+            return "Código inválido";
+    }
+    return `Total: R$ ${(preco * quantidade).toFixed(2)}`;
+}
+
+function mostrarCompra() {
+    const codigo = parseInt(document.getElementById("codigoCompra").value);
+    const quantidade = parseInt(document.getElementById("quantidade").value);
+    document.getElementById("resultado03").textContent = calcularCompra(codigo, quantidade);
+}
+</script>
+
+<!-- Exercício 04 -->
+<script>
+function calcularCombustivel(tipo, litros) {
+    let preco;
+    switch (tipo.toUpperCase()) {
+        case "G":
+            preco = 5.8;
+            break;
+        case "E":
+            preco = 4.2;
+            break;
+        default:
+            return "Tipo de combustível inválido";
+    }
+    return `Total: R$ ${(preco * litros).toFixed(2)}`;
+}
+
+function mostrarCombustivel() {
+    const tipo = document.getElementById("tipoCombustivel").value;
+    const litros = parseFloat(document.getElementById("litros").value);
+    document.getElementById("resultado04").textContent = calcularCombustivel(tipo, litros);
+}
+</script>
+
+<!-- Exercício 05 -->
+<script>
+function mesCorrespondente(numero) {
+    switch (numero) {
+        case 1: return "Janeiro";
+        case 2: return "Fevereiro";
+        case 3: return "Março";
+        case 4: return "Abril";
+        case 5: return "Maio";
+        case 6: return "Junho";
+        case 7: return "Julho";
+        case 8: return "Agosto";
+        case 9: return "Setembro";
+        case 10: return "Outubro";
+        case 11: return "Novembro";
+        case 12: return "Dezembro";
+        default: return "Mês inválido";
+    }
+}
+
+function mostrarMes() {
+    const numero = parseInt(document.getElementById("numeroMes").value);
+    document.getElementById("resultado05").textContent = mesCorrespondente(numero);
+}
+</script>
+
+</body>
+</html>

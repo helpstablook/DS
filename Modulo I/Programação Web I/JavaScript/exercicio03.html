@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 3_exercicioTerreno.html --> 
+     <meta charset="UTF-8"> 
+     <script> 
+     
+     //solicitar largura, comprimento e valor do m2 
+     let largura = parseInt(prompt("Largura:")); 
+     let comp = parseInt(prompt("Comprimento:")); 
+     let preco = parseFloat(prompt("Preço m2 em R$")); 
+     
+     //calcula area e valor total do terreno 
+     let area = largura*comp; 
+     let valorTerreno = area * preco; 
+     
+     //alerta para exibir area e preço total 
+     alert("Área: "+area+"\nValor total R$ "+valorTerreno.toFixed(2)); 
+     
+     //estrutura condicional para saber se posso comprar 
+     if(valorTerreno<250000){ alert("Posso adquirir"); }
+     else if(valorTerreno<400000){ alert("Necessário financiar"); }
+     else{ alert("Sonho"); } 
+    </script>

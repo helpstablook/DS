@@ -1,0 +1,57 @@
+<!-- Exercício 01 -->
+<script>
+    let numeros1 = [];
+    let soma1 = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        let valor = parseInt(prompt(`Digite o ${i + 1}º valor inteiro:`));
+        numeros1.push(valor);
+        soma1 += valor;
+    }
+    
+    console.log("Valores digitados:", numeros1);
+    console.log("Soma dos valores:", soma1);
+    </script>
+    
+    <!-- Exercício 02 -->
+    <script>
+    let numeros2 = [];
+    
+    for (let i = 0; i < 10; i++) {
+        let valor = parseFloat(prompt(`Digite o ${i + 1}º valor numérico:`));
+        numeros2.push(valor);
+    }
+    
+    console.log("Valores na ordem inversa:", numeros2.reverse());
+    </script>
+    
+    <!-- Exercício 03 -->
+    <script>
+    let numeros3 = [];
+    let soma3 = 0;
+    
+    for (let i = 0; i < 5; i++) {
+        let valor = parseFloat(prompt(`Digite o ${i + 1}º número real:`));
+        numeros3.push(valor);
+        soma3 += valor;
+    }
+    
+    let media = soma3 / numeros3.length;
+    
+    console.log("Valores digitados:", numeros3);
+    console.log("Média dos valores:", media.toFixed(2));
+    </script>
+    
+    <!-- Exercício 04 -->
+    <script>
+    let quantidade = parseInt(prompt("Digite o número de pessoas:"));
+    let nomes4 = [];
+    
+    for (let i = 0; i < quantidade; i++) {
+        let nome = prompt(`Digite o nome da ${i + 1}ª pessoa:`);
+        nomes4.push(nome);
+    }
+    
+    console.log("Nomes cadastrados:", nomes4);
+    </script>
+    

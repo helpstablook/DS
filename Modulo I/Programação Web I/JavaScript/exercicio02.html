@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+<script>
+    //media de 2 notas exibindo a classificação: Aprovado, Aprovado com louvor, Reprovado
+        //parseInt para inteiros
+        //ParseFloat para reais
+        //Number caso o tipo de número seja indiferente
+    let n1 = parseFloat(prompt("N1: "));
+    let n2 = parseFloat(prompt("N2:"));
+    let media = (n1+n2)/2;
+    alert("Média: "+media.toFixed(2));
+    
+    //estrutura condicional Se
+    if(media<5){
+        alert("Reprovado");
+    }else if(media<8){
+        alert("Aprovado");
+    }else{
+        alert("Aprovado com louvor");
+    }
+</script>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios de JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .btn {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: left;
+            display: inline-block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Menu de Exercícios</h1>
+    <button class="btn" onclick="exercicio1()">Exercício 1</button>
+    <button class="btn" onclick="exercicio2()">Exercício 2</button>
+    <button class="btn" onclick="exercicio3()">Exercício 3</button>
+    <button class="btn" onclick="exercicio4()">Exercício 4</button>
+
+    <div id="resultArea" class="result"></div>
+
+    <script>
+        // Função para exibir resultados
+        function exibirResultado(conteudo) {
+            const resultArea = document.getElementById("resultArea");
+            resultArea.innerHTML = conteudo;
+        }
+
+        // Exercício 01
+        function exercicio1() {
+            let numeros1 = [];
+            let soma1 = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let valor = parseInt(prompt(`Digite o ${i + 1}º valor inteiro:`));
+                numeros1.push(valor);
+                soma1 += valor;
+            }
+
+            let resultado = `<h3>Exercício 1: Soma dos Valores</h3>
+                             <p><strong>Valores digitados:</strong> ${numeros1.join(", ")}</p>
+                             <p><strong>Soma dos valores:</strong> ${soma1}</p>`;
+            exibirResultado(resultado);
+        }
+
+        // Exercício 02
+        function exercicio2() {
+            let numeros2 = [];
+
+            for (let i = 0; i < 10; i++) {
+                let valor = parseFloat(prompt(`Digite o ${i + 1}º valor numérico:`));
+                numeros2.push(valor);
+            }
+
+            let resultado = `<h3>Exercício 2: Ordem Inversa</h3>
+                             <p><strong>Valores na ordem inversa:</strong> ${numeros2.reverse().join(", ")}</p>`;
+            exibirResultado(resultado);
+        }
+
+        // Exercício 03
+        function exercicio3() {
+            let numeros3 = [];
+            let soma3 = 0;
+
+            for (let i = 0; i < 5; i++) {
+                let valor = parseFloat(prompt(`Digite o ${i + 1}º número real:`));
+                numeros3.push(valor);
+                soma3 += valor;
+            }
+
+            let media = soma3 / numeros3.length;
+
+            let resultado = `<h3>Exercício 3: Média dos Valores</h3>
+                             <p><strong>Valores digitados:</strong> ${numeros3.join(", ")}</p>
+                             <p><strong>Média dos valores:</strong> ${media.toFixed(2)}</p>`;
+            exibirResultado(resultado);
+        }
+
+        // Exercício 04
+        function exercicio4() {
+            let quantidade = parseInt(prompt("Digite o número de pessoas:"));
+            let nomes4 = [];
+
+            for (let i = 0; i < quantidade; i++) {
+                let nome = prompt(`Digite o nome da ${i + 1}ª pessoa:`);
+                nomes4.push(nome);
+            }
+
+            let resultado = `<h3>Exercício 4: Nomes Cadastrados</h3>
+                             <p><strong>Nomes cadastrados:</strong> ${nomes4.join(", ")}</p>`;
+            exibirResultado(resultado);
+        }
+    </script>
+</body>
+</html>

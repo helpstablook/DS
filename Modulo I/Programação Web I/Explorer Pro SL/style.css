@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.header-container {
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+}
+
+.logo {
+    width: 150px;
+}
+
+.container {
+    position: relative;
+    background: url('./img/bike5.jpg') no-repeat center center;
+    height: 70vh;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #0005;
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    color: #fff;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    place-self: start;
+}
+
+.title_text {
+    font-size: 2rem;
+    color: #fff;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px #0007;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    grid-column: 1/-1;
+    place-self: middle;
+}
+
+.description_text {
+    font-size: 2rem;
+    margin-top: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 4px #0009;
+}
+
+.action {
+    grid-column: 7/-1;
+    height: 60px;
+    width: 300px;
+    color: #fff;
+    background-color: #FF0000;
+    font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    border-radius: 10px;
+    margin-top: -600px;
+    margin-left: 100px;
+    margin-right: 50px;
+    padding: 10px;
+}
+
+.gallery {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.gallery h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #444;
+    font-weight: 600;
+}
+
+.images-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.images-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.images-grid img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        height: 50vh;
+        padding-left: 20px;
+    }
+
+    .title_text, .description_text {
+        font-size: 1.5rem;
+    }
+
+    .action {
+        width: 250px;
+        font-size: 1rem;
+        margin-top: -400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        justify-content: center;
+        padding-left: 10px;
+    }
+
+    .title_text, .description_text {
+        font-size: 1.2rem;
+    }
+
+    .action {
+        width: 200px;
+        height: 50px;
+        font-size: 0.9rem;
+        margin-top: -300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        height: 40vh;
+        padding-left: 5px;
+    }
+
+    .title_text, .description_text {
+        font-size: 1rem;
+    }
+
+    .action {
+        width: 150px;
+        height: 40px;
+        font-size: 0.8rem;
+        margin-top: -200px;
+    }
+
+    .images-grid {
+        grid-template-columns: 1fr;
+    }
+}
