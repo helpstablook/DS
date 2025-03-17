@@ -1,8 +1,10 @@
 //menu HEADER
 //seleciona o menuOpener
 let menuOpener = document.querySelector('.menu-opener');
+
 //seleciona o nav dentro do header
 let nav = document.querySelector('header nav');
+
 //cria um listener para o evento click no menuOpener
 menuOpener.addEventListener('click', ()=>{
     if(nav.classList.contains('opened')){
@@ -19,3 +21,32 @@ menuOpener.addEventListener('click', ()=>{
         .display='none';
     }
 });
+
+//TESTEMONIALS
+//Cria um vetor para armazenar as frases e os iconess
+let testemonials =[
+    {quote: '"Mais do que nunca, os animais de estimação' + 'são tratados como menbros da família."', origin: 'cbs.svg'},
+    {quote: '"DogDev é um serviço de entrega diretoao'+'consumidor, preparadona hora com ingredientes'+'100% reais. Ingredientes que humanos conhecem."', origin:'forbes.svg'},
+    {quote: '"DogDev usa ingredientes simples e limpos'+'em seus pratos."', origin:'fox.svg'},
+    {quote: '"Vejo você DogDev como um verdadeiro herói."', origin: 'sharktank.svg'}
+];
+//Seleciona os elementos no html
+let testemonialQuote = document.querySelector('.testemonials .quote');
+let testemonialIcons = document.querySelector('.testemonials .icons');
+//cria um for para preencher os icones
+for(let tindex in testemonials){
+    let img = document.createElement('img');
+    img.setAttribute('src', './assets/images/' + testemonials[parseInt(tindex)].origin);
+    img.style.cursor='pointer';
+    img.addEventListener('click', ()=> fillTestemonial(parseInt(tindex)));
+    testemonialIcons.appendChild(img);
+}
+
+//variaveis para o testemunho corrente em timer
+let currentTestemonial=0;
+let testemonialTimer;
+
+//função para preencher a frase
+const fillTestemonial = (index) =>{
+    //sextoooou
+}

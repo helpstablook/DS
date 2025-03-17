@@ -14,5 +14,7 @@
 }
 .testemonials .icons{
     display: flex;
-    
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    margin: auto;
 }
