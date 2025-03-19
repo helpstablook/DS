@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AppName.Celular">
+
+    <StackLayout>
+        <Label Text="{Binding Marca}" FontSize="24"/>
+        <Label Text="{Binding Modelo}" FontSize="20"/>
+        <Label Text="{Binding Cor}" FontSize="18"/>
+        <Label Text="{Binding SistemaOperacional}" FontSize="18"/>
+        <Label Text="{Binding Preco, StringFormat='Preço: {0:C}'}" FontSize="18"/>
+    </StackLayout>
+
+</ContentPage>

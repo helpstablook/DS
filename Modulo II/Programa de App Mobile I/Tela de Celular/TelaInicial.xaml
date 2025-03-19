@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="AppName.TelaInicial">
+
+    <StackLayout>
+        <Button Text="Abrir Galaxy S24 Ultra" Clicked="OnCelular1Clicked" />
+        <Button Text="Abrir Redmi Note 13 Pro" Clicked="OnCelular2Clicked" />
+        <Button Text="Abrir Edge 50 Neo" Clicked="OnCelular3Clicked" />
+        <Button Text="Abrir Galaxy A55" Clicked="OnCelular4Clicked" />
+    </StackLayout>
+
+</ContentPage>
