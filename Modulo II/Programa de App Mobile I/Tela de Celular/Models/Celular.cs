@@ -1,3 +1,4 @@
+namespace TelaCelular.Models
 public class Celular
 {
     public string Marca { get; set; }

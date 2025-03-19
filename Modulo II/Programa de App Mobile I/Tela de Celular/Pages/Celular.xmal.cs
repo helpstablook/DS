@@ -1,3 +1,8 @@
+using TelaCelular.Models;
+using Xamarin.Forms;
+
+namespace TelaCelular
+{
 public partial class Celular : ContentPage
 {
     public Celular(Celular celular)
@@ -5,4 +10,5 @@ public partial class Celular : ContentPage
         InitializeComponent();
         BindingContext = celular;
     }
+}
 }

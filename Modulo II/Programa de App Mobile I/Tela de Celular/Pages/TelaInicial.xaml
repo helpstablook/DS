@@ -2,7 +2,7 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="AppName.TelaInicial">
+             x:Class="TelaCelular.TelaInicial">
 
     <StackLayout>
         <Button Text="Abrir Galaxy S24 Ultra" Clicked="OnCelular1Clicked" />

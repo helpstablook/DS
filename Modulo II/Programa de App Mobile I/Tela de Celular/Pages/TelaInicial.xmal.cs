@@ -1,3 +1,8 @@
+using TelaCelular.Models;
+using Xamarin.Forms;
+
+namespace TelaCelular
+{
 public partial class TelaInicial : ContentPage
 {
     public TelaInicial()
@@ -56,4 +61,5 @@ public partial class TelaInicial : ContentPage
         };
         await Navigation.PushAsync(new Celular(celular4));
     }
+}
 }

@@ -1,0 +1,31 @@
+
+body {
+    background-color: #d8d5b6;
+    font-family: Helvetica, sans-serif;
+}
+
+button {
+    background-color: #53422d;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #53422d;
+}
+
+label {
+    font-size: 18px;
+    color: #333333;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.image {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
