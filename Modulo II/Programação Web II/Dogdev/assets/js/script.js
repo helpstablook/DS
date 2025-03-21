@@ -25,9 +25,9 @@ menuOpener.addEventListener('click', ()=>{
 //TESTEMONIALS
 //Cria um vetor para armazenar as frases e os iconess
 let testemonials =[
-    {quote: '"Mais do que nunca, os animais de estimação' + 'são tratados como menbros da família."', origin: 'cbs.svg'},
-    {quote: '"DogDev é um serviço de entrega diretoao'+'consumidor, preparadona hora com ingredientes'+'100% reais. Ingredientes que humanos conhecem."', origin:'forbes.svg'},
-    {quote: '"DogDev usa ingredientes simples e limpos'+'em seus pratos."', origin:'fox.svg'},
+    {quote: '"Mais do que nunca, os animais de estimação ' + 'são tratados como menbros da família."', origin: 'cbs.svg'},
+    {quote: '"DogDev é um serviço de entrega direto ao ' + 'consumidor, preparado na hora com ingredientes' + ' 100% reais. Ingredientes que humanos conhecem."', origin:'forbes.svg'},
+    {quote: '"DogDev usa ingredientes simples e limpos ' + 'em seus pratos."', origin:'fox.svg'},
     {quote: '"Vejo você DogDev como um verdadeiro herói."', origin: 'sharktank.svg'}
 ];
 //Seleciona os elementos no html
@@ -48,5 +48,21 @@ let testemonialTimer;
 
 //função para preencher a frase
 const fillTestemonial = (index) =>{
-    //sextoooou
+    
+    clearTimeout(testemonialTimer);
+    currentTestemonial = index;
+    testemonialQuote.innerHTML = 
+    testemonials[currentTestemonial].quote;
+    let imgs = testemonialIcons.querySelectorAll('img');
+    for(let img of imgs) img.style.opacity=0.2;
+    imgs[currentTestemonial].style.opacity=1;
+    testemonialTimer = setTimeout(nextTestemonial, 3000);
 }
+const nextTestemonial =() =>{
+    if(testemonials[currentTestemonial+1]){
+        fillTestemonial(currentTestemonial+1);
+    }else{
+    fillTestemonial(0);
+    }
+}
+nextTestemonial();
