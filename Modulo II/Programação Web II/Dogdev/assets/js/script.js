@@ -66,3 +66,28 @@ const nextTestemonial =() =>{
     }
 }
 nextTestemonial();
+
+//FAQ
+let currentFaq = 0;
+let faqItems = document.querySelectorAll('.faq .accordion .item');
+ 
+faqItems.forEach((el, index) => {
+    el.querySelector('.title').addEventListener('click', () => setfaq(index));
+});
+ 
+// Abre a pergunta que a pessoa clicou
+const setfaq = (index) => {
+    currentFaq = index;
+ 
+    // Verifica se a pergunta atual já está aberta e fecha caso esteja
+    if (faqItems[currentFaq].classList.contains('opened')) {
+        faqItems[currentFaq].classList.remove('opened');
+        return;
+    }
+ 
+    // Mantém fechada todas as outras perguntas
+    faqItems.forEach((item) => item.classList.remove('opened'));
+ 
+    // Abre a faq que foi clicada, caso não esteja aberta
+    faqItems[currentFaq].classList.add('opened');
+};
