@@ -1,6 +1,6 @@
 .newsletter{
-    padding: 5ren 0;
-    background-color: var(--secondary);
+    padding: 5rem 0;
+    background-color: var(--foreground);
 }
 .newsletter .container{
     padding: 0 3rem;

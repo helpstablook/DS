@@ -18,7 +18,7 @@
 .faq .accordion .item:last-child{
     border-bottom: 0;
 }
-.faq .accordion .item  .title{
+.faq .accordion .item .title{
     font-size: 2rem;
     color: var(--secondary);
     padding: 1rem 0;
@@ -28,7 +28,7 @@
     cursor: pointer;
 }
 .faq .accordion .item .title img{
-    transition: all ease .5; 
+    transition: all ease .5s;
 }
 .faq .accordion .item .body{
     line-height: 2.5rem;
@@ -39,9 +39,9 @@
 .faq .accordion .item .body p{
     padding-bottom: 2rem;
 }
-.faq .accordion .item .opened .body{
+.faq .accordion .item.opened .body{
     max-height: 100vh;
 }
-.faq .accordion .item .opened .title img{
+.faq .accordion .item.opened .title img{
     transform: rotate(180deg);
 }
